@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Seg2Any: Open-set Segmentation Mask-to-Image Generation with Precise Shape and Semantic Control</title>
+  <title>Seg2Any | Fudan University & HiThink Research</title>
   <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Seg2Any: Open-set Segmentation Mask-to-Image Generation with Precise Shape and Semantic Control</h1>
+            <h1 class="title is-1 publication-title">Seg2Any: Open-set Segmentation-Mask-to-Image Generation with Precise Shape and Semantic Control</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -126,7 +126,7 @@
         <!-- Your image here -->
         <img src="static/images/demo.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          We propose Seg2Any, a novel segmentation mask-to-image generation approach that achieves strong shape consistency and fine-grained attribute control (e.g. color, style, and text).
+          We propose Seg2Any, a novel segmentation-mask-to-image generation approach that achieves strong shape consistency and fine-grained attribute control (e.g. color, style, and text).
         </h2>
       </div>
 </div>
@@ -142,7 +142,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Despite recent advances in diffusion models, top-tier text-to-image (T2I) models still struggle to achieve precise spatial layout control, <i>i.e.</i> accurately generating entities with specified attributes and locations. Segmentation mask-to-image (S2I) generation has emerged as a promising solution by incorporating pixel-level spatial guidance and regional text prompts. However, existing S2I methods fail to simultaneously ensure semantic consistency and shape consistency.
+            Despite recent advances in diffusion models, top-tier text-to-image (T2I) models still struggle to achieve precise spatial layout control, <i>i.e.</i> accurately generating entities with specified attributes and locations. Segmentation-mask-to-image (S2I) generation has emerged as a promising solution by incorporating pixel-level spatial guidance and regional text prompts. However, existing S2I methods fail to simultaneously ensure semantic consistency and shape consistency.
 To address these challenges, we propose Seg2Any, a novel S2I framework built upon advanced multimodal diffusion transformers (<i>e.g.</i> FLUX). First, to achieve both semantic and shape consistency, we decouple segmentation mask conditions into regional semantic and high-frequency shape components. The regional semantic condition is introduced by a Semantic Alignment Attention Mask, ensuring that generated entities adhere to their assigned text prompts. The high-frequency shape condition, representing entity boundaries, is encoded as an Entity Contour Map and then introduced as an additional modality via multi-modal attention to guide image spatial structure. Second, to prevent attribute leakage across entities in multi-entity scenarios, we introduce an Attribute Isolation Attention Mask mechanism, which constrains each entity’s image tokens to attend exclusively to themselves during image self-attention.
 To support open-set S2I generation, we construct SACap-1M, a large-scale dataset containing 1 million images with 5.9 million segmented entities and detailed regional captions, along with a SACap-Eval benchmark for comprehensive S2I evaluation.
 Extensive experiments demonstrate that Seg2Any achieves state-of-the-art performance on both open-set and closed-set S2I benchmarks, particularly in fine-grained spatial and attribute control of entities.
@@ -180,6 +180,22 @@ Extensive experiments demonstrate that Seg2Any achieves state-of-the-art perform
           <img src="static/images/dataset_pipeline.png" alt="MY ALT TEXT"/>
           <p>
             An overview of the data annotation pipeline. Recent advances in open-source vision language models (VLMs), such as Qwen2-VL-72B, have significantly reduced the performance gap with close-source VLMs like GPT-4V, making it feasible to create large-scale and richly annotated datasets. Leveraging the capabilities of Qwen2-VL-72B, we construct Segment Anything with Captions 1 Million (SACap-1M), a large-scale dataset derived from the diverse and high-resolution SA-1B dataset. SACap-1M contains 1 million image-text pairs and 5.9 million segmented entities, each comprised of a segmentation mask and a detailed regional caption, with captions averaging 58.6 words per image and 14.1 words per entity. We further present the SACap-Eval, a benchmark for assessing the quality of open-set S2I generation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Quantitative Comparison</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/quantitative_comparison.png" alt="MY ALT TEXT"/>
+          <p>
+            Quantitative comparison on the SACap-Eval benchmark. <b>Bold</b> and <u>underline</u> represent the best and second best methods, respectively.
           </p>
         </div>
       </div>
